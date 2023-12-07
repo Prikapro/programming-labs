@@ -1,0 +1,15 @@
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/07programmingLab
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/07programmingLab.deps.json
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/07programmingLab.runtimeconfig.json
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/07programmingLab.dll
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/ref/07programmingLab.dll
+/home/alexey/02projects/07programmingLab/bin/Debug/net6.0/07programmingLab.pdb
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.csproj.AssemblyReference.cache
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.GeneratedMSBuildEditorConfig.editorconfig
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.AssemblyInfoInputs.cache
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.AssemblyInfo.cs
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.csproj.CoreCompileInputs.cache
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.dll
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/ref/07programmingLab.dll
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.pdb
+/home/alexey/02projects/07programmingLab/obj/Debug/net6.0/07programmingLab.genruntimeconfig.cache
