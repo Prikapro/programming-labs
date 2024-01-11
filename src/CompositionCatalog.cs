@@ -1,3 +1,4 @@
+using System.Xml;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 
@@ -156,6 +157,10 @@ namespace v3lab
             {
                 Console.WriteLine("Incorrect path: files/" + search);
             }
+            catch (JsonSerializationException)
+            {
+                Console.WriteLine("Incorrect json (maybe you haven't write array?)");
+            }
         }
 
 
@@ -190,6 +195,10 @@ namespace v3lab
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Incorrect path: files/" + search);
+            }
+            catch (XmlException)
+            {
+                Console.WriteLine("Incorrect xml");
             }
         }
 

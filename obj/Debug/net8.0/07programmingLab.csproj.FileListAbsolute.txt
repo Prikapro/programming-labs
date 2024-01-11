@@ -1,4 +1,3 @@
-/home/alexey/02projects/11sharp/bin/Debug/net8.0/files/file.json
 /home/alexey/02projects/11sharp/bin/Debug/net8.0/07programmingLab
 /home/alexey/02projects/11sharp/bin/Debug/net8.0/07programmingLab.deps.json
 /home/alexey/02projects/11sharp/bin/Debug/net8.0/07programmingLab.runtimeconfig.json
@@ -120,3 +119,5 @@
 /home/alexey/02projects/11sharp/obj/Debug/net8.0/07programmingLab.pdb
 /home/alexey/02projects/11sharp/obj/Debug/net8.0/07programmingLab.genruntimeconfig.cache
 /home/alexey/02projects/11sharp/obj/Debug/net8.0/ref/07programmingLab.dll
+/home/alexey/02projects/11sharp/obj/Debug/net8.0/07programmingLab.sourcelink.json
+/home/alexey/02projects/11sharp/bin/Debug/net8.0/files/file.json
