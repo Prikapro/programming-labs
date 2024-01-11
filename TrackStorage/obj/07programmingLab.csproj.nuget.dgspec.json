@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/alexey/02projects/11sharp/07programmingLab.csproj": {}
+    "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj": {}
   },
   "projects": {
-    "/home/alexey/02projects/11sharp/07programmingLab.csproj": {
+    "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/alexey/02projects/11sharp/07programmingLab.csproj",
+        "projectUniqueName": "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj",
         "projectName": "07programmingLab",
-        "projectPath": "/home/alexey/02projects/11sharp/07programmingLab.csproj",
+        "projectPath": "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj",
         "packagesPath": "/home/alexey/.nuget/packages/",
-        "outputPath": "/home/alexey/02projects/11sharp/obj/",
+        "outputPath": "/home/alexey/02projects/11sharp/TrackStorage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/alexey/.nuget/NuGet/NuGet.Config"
