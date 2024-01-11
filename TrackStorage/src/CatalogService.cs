@@ -1,9 +1,13 @@
+using System.Xml;
+using System.Xml.Linq;
+using Newtonsoft.Json;
+
 namespace v3lab
 {
     public class CatalogService
     {
-        private static CompositionContext db = new CompositionContext();
-        private static List<Composition> catalog = db.Compositions.ToList();
+        private static CompositionContext db = new();
+        private static List<Composition> catalog = new();
 
         public static List<Composition> getCatalog()
         {
@@ -63,6 +67,70 @@ namespace v3lab
             db.DeleteAllCompositions();
             db.AddRange(catalog);
             db.SaveChanges();
+        }
+
+        public static List<Composition> JsonToTracks(string json)
+        {
+            List<JsonComposition> newCompositions;
+            try
+            {
+                newCompositions = JsonConvert.DeserializeObject<List<JsonComposition>>(json);
+            }
+            catch (JsonSerializationException)
+            {
+                newCompositions = new();
+            }
+
+            List<Composition> result = new();
+            foreach (var composition in newCompositions)
+            {
+                result.Add(new Composition(composition.author, composition.name));
+            }
+
+            return result;
+        }
+
+        public static string TracksToJson(List<Composition> tracks)
+        {
+            return JsonConvert.SerializeObject(tracks);
+        }
+
+        public static List<Composition> XmlToTracks(string xml)
+        {
+            List<Composition> result = new();
+            XDocument xdoc;
+            try
+            {
+                xdoc = XDocument.Parse(xml);
+
+                foreach (XElement compositionElement in xdoc.Root.Descendants("composition"))
+                {
+                    result.Add(new Composition(
+                        compositionElement.Attribute("author").Value,
+                        compositionElement.Attribute("name").Value
+                    ));
+                }
+            }
+            catch (XmlException)
+            {
+            }
+
+            return result;
+        }
+
+        public static string TracksToXml(List<Composition> tracks)
+        {
+            string xml = "<root>\n";
+            foreach (var composition in tracks)
+            {
+                XElement compositionElement = new XElement("composition",
+                    new XAttribute("author", composition.Author),
+                    new XAttribute("name", composition.Name));
+                xml += compositionElement + "\n";
+            }
+
+            xml += "</root>";
+            return xml;
         }
     }
 }

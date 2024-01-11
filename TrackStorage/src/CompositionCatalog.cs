@@ -143,23 +143,13 @@ namespace v3lab
                 using (StreamReader reader = new StreamReader(@"files/" + search))
                 {
                     string json = reader.ReadToEnd();
-
-                    List<JsonComposition> newCompositions =
-                        JsonConvert.DeserializeObject<List<JsonComposition>>(json);
-
-                    foreach (var composition in newCompositions)
-                    {
-                        CatalogService.getCatalog().Add(new Composition(composition.author, composition.name));
-                    }
+                    List<Composition> newCompositions = CatalogService.JsonToTracks(json);
+                    CatalogService.getCatalog().AddRange(newCompositions);
                 }
             }
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Incorrect path: files/" + search);
-            }
-            catch (JsonSerializationException)
-            {
-                Console.WriteLine("Incorrect json (maybe you haven't write array?)");
             }
         }
 
@@ -168,7 +158,7 @@ namespace v3lab
         {
             Console.WriteLine("write output file.json in '/files' folder");
             string search = Console.ReadLine();
-            string json = JsonConvert.SerializeObject(CatalogService.getCatalog());
+            string json = CatalogService.TracksToJson(CatalogService.getCatalog());
             File.WriteAllText(@"files/" + search, json);
         }
 
@@ -181,42 +171,22 @@ namespace v3lab
                 using (StreamReader reader = new StreamReader(@"files/" + search))
                 {
                     string xml = reader.ReadToEnd();
-
-                    XDocument xdoc = XDocument.Parse(xml);
-                    foreach (XElement compositionElement in xdoc.Root.Descendants("composition"))
-                    {
-                        CatalogService.getCatalog().Add(new Composition(
-                            compositionElement.Attribute("author").Value,
-                            compositionElement.Attribute("name").Value
-                        ));
-                    }
+                    List<Composition> result = CatalogService.XmlToTracks(xml);
+                    CatalogService.getCatalog().AddRange(result);
                 }
             }
             catch (FileNotFoundException)
             {
                 Console.WriteLine("Incorrect path: files/" + search);
             }
-            catch (XmlException)
-            {
-                Console.WriteLine("Incorrect xml");
-            }
+
         }
 
         private static void SaveXmlCompositions()
         {
             Console.WriteLine("write output file.xml in '/files' folder");
             string search = Console.ReadLine();
-            string xml = "<root>\n";
-            foreach (var composition in CatalogService.getCatalog())
-            {
-                XElement compositionElement = new XElement("composition",
-                    new XAttribute("author", composition.Author),
-                    new XAttribute("name", composition.Name));
-                xml += compositionElement + "\n";
-            }
-
-            xml += "</root>";
-
+            string xml = CatalogService.TracksToXml(CatalogService.getCatalog());
             File.WriteAllText(@"files/" + search, xml);
         }
     }

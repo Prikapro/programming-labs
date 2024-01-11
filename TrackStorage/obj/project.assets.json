@@ -2575,9 +2575,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj",
-      "projectName": "07programmingLab",
-      "projectPath": "/home/alexey/02projects/11sharp/TrackStorage/07programmingLab.csproj",
+      "projectUniqueName": "/home/alexey/02projects/11sharp/TrackStorage/TrackStorage.csproj",
+      "projectName": "TrackStorage",
+      "projectPath": "/home/alexey/02projects/11sharp/TrackStorage/TrackStorage.csproj",
       "packagesPath": "/home/alexey/.nuget/packages/",
       "outputPath": "/home/alexey/02projects/11sharp/TrackStorage/obj/",
       "projectStyle": "PackageReference",
